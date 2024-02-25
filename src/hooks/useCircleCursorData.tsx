@@ -19,7 +19,7 @@ export default function useCircleCursorData({
 
   useEffect(() => {
     const animate = () => {
-      // Calculate the vector from point A to point B
+      // Calculate the vector from Circle position to Mouse position
       const directionVector = {
         x: mouseX - circleData.circlePos.x,
         y: mouseY - circleData.circlePos.y,

@@ -1,5 +1,5 @@
-import getAcceleration1D from "@/app/utils/getAcceleration1D";
-import getCircleTransformationString from "@/app/utils/getCircleTransformationString";
+import getAcceleration1D from "@/components/circle-chaser/utils/getAcceleration1D";
+import getCircleTransformationString from "@/components/circle-chaser/utils/getCircleTransformationString";
 import { useEffect, useState } from "react";
 
 export default function useCircleCursorData({

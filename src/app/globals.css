@@ -1,5 +1,6 @@
 :root {
   --bg-color: #232323;
+  --nav-height: 3em;
 }
 
 @media (prefers-color-scheme: dark) {

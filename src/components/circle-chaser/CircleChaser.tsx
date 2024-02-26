@@ -1,12 +1,12 @@
 "use client";
 import useMouseMove from "@/hooks/useMouseMove";
 import styles from "./circlecursor.module.css";
-import useCircleCursorData from "@/hooks/useCircleCursorData";
+import useCircleCursorData from "./hooks/useCircleCursorData";
 
 const CIRCLE_RADIUS = 20;
 const INCREMENT = 0.5;
 
-export default function CircleCursor() {
+export default function CircleChaser() {
   const { mouseX, mouseY } = useMouseMove();
   const { circleX, circleY, transformationString } = useCircleCursorData({
     mouseX: mouseX - CIRCLE_RADIUS,

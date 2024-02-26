@@ -12,7 +12,6 @@ export function nthTriangularNumber(n: number, increment: number) {
   result += nextStep;
 
   return result;
-  // return ((n * (n + 1)) / 2) * increment;
 }
 
 export function distanceBetweenTwoPoints({

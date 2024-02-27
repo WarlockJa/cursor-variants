@@ -1,7 +1,7 @@
 .remnant {
   position: absolute;
-  width: 1.2em;
-  height: 1.2em;
+  width: 1.3em;
+  height: 1.3em;
   clip-path: polygon(
     50% 0,
     66% 33%,
@@ -12,6 +12,11 @@
     0 50%,
     33% 33%
   );
+}
+
+.glow {
+  position: absolute;
+  box-shadow: 0rem 0rem 1.2rem 0.6rem rgb(125, 221, 221);
 }
 
 .fallingDown1 {

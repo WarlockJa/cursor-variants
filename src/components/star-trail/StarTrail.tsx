@@ -14,6 +14,13 @@ interface IRemanant {
   animationClass: string;
 }
 
+interface IGlow {
+  id: string;
+  x: number;
+  y: number;
+  ttl: NodeJS.Timeout;
+}
+
 const randomColors = ["gold", "greenyellow", "crimson", "hotpink", "aqua"];
 const randomAnimation = ["fallingDown1", "fallingDown2", "fallingDown3"];
 
@@ -22,6 +29,8 @@ export default function StarTrail() {
   const { mouseX, mouseY } = useMouseMove();
   // remnants array
   const [remnants, setRemnants] = useState<IRemanant[]>([]);
+  // glow array
+  const [glow, setGlow] = useState<IGlow[]>([]);
 
   // cleanup function. removes remnant with id from the array
   const removeRemnant = (id: string) => {
@@ -29,6 +38,15 @@ export default function StarTrail() {
       return prev.filter((item) => item.id !== id);
     });
   };
+  // cleanup function. removes remnant with id from the array
+  const removeGlow = (id: string) => {
+    setGlow((prev) => {
+      return prev.filter((item) => item.id !== id);
+    });
+  };
+
+  // filling glow blanks
+  const lastGlowPosition = useRef<{ x: number; y: number } | null>(null);
 
   // debouncing
   // debouncing is done based on time passed tracked by deBouncer and
@@ -40,6 +58,42 @@ export default function StarTrail() {
   });
 
   useEffect(() => {
+    // initial state breaker
+    if (mouseX === -200) return;
+    // filling possible gaps between glow elements with distributed glow elements
+    if (lastGlowPosition.current) {
+      // distance between current position and the last saved
+      const glowDistance = getDistance(
+        { x: mouseX, y: mouseY },
+        lastGlowPosition.current
+      );
+      // calculating amount of glow elements to fit in the distance
+      const glowQuantity = Math.max(Math.floor(glowDistance / 10), 1);
+      // delta distances
+      const dx = (mouseX - lastGlowPosition.current.x) / glowQuantity;
+      const dy = (mouseY - lastGlowPosition.current.y) / glowQuantity;
+      // forming array and generating glow elements for each delta distance
+      Array.from(Array(glowQuantity)).forEach((_, index) => {
+        const x = lastGlowPosition.current!.x + dx * index;
+        const y = lastGlowPosition.current!.y + dy * index;
+
+        setGlow((prev) => {
+          const newId = crypto.randomUUID();
+          return [
+            ...prev,
+            {
+              id: newId,
+              x,
+              y,
+              ttl: setTimeout(() => removeGlow(newId), 200),
+            },
+          ];
+        });
+      });
+    }
+    // saving last glow element position
+    lastGlowPosition.current = { x: mouseX, y: mouseY };
+
     // calculating distance between the last remnant position and the mouse
     const distanceToLastRemnant = getDistance(lastRemnantPosition.current, {
       x: mouseX,
@@ -82,6 +136,7 @@ export default function StarTrail() {
     };
   }, [mouseX, mouseY]);
 
+  // remnant elements
   const content = remnants.map((item) => (
     <div
       key={`star${item.id}`}
@@ -93,5 +148,21 @@ export default function StarTrail() {
       }}
     ></div>
   ));
-  return <>{content}</>;
+  // glow elements
+  const glowContent = glow.map((item) => (
+    <div
+      key={`glow${item.id}`}
+      className={styles.glow}
+      style={{
+        left: `${item.x}px`,
+        top: `${item.y}px`,
+      }}
+    ></div>
+  ));
+  return (
+    <>
+      {glowContent}
+      {content}
+    </>
+  );
 }

@@ -16,10 +16,15 @@
     right: 50%;
     animation: fadeInCover 4s cubic-bezier(0.375, 0.885, 0.32, 1.275) 1;
     animation-fill-mode: forwards;
-    background: linear-gradient(45deg, rgb(48, 48, 73), rgb(78, 37, 37));
+    background: linear-gradient(
+      45deg,
+      var(--clr-homeGradient1),
+      var(--clr-homeGradient2)
+    );
   }
 
   .header {
+    color: var(--clr-font);
     text-align: center;
     opacity: 0;
     animation: fadeInHeader 4s linear 1;

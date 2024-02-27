@@ -16,6 +16,7 @@
 
   .navButton {
     position: relative;
+    background-color: transparent;
     width: 9em;
     padding: 0.5em 1em;
     font-size: 1rem;
@@ -24,6 +25,7 @@
     cursor: pointer;
   }
   .navButton::before {
+    color: var(--clr-font);
     position: absolute;
     background: linear-gradient(90deg, rgb(49, 46, 95), rgb(143, 34, 34));
     opacity: 0;

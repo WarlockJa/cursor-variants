@@ -1,11 +1,19 @@
 :root {
-  --bg-color: #232323;
+  --bg-color: #ffffff;
+  --clr-font: #ffffff;
+  --clr-main: #232323;
+  --clr-homeGradient1: rgba(48, 48, 73, 0.8);
+  --clr-homeGradient2: rgba(78, 37, 37, 0.8);
   --nav-height: 3em;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #232323;
+    --clr-font: #ffffff;
+    --clr-main: #ffffff;
+    --clr-homeGradient1: rgba(48, 48, 73, 1);
+    --clr-homeGradient2: rgba(78, 37, 37, 1);
   }
 }
 

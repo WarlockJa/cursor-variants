@@ -6,12 +6,12 @@ export default function Nav() {
   const router = useRouter();
   return (
     <nav className={styles.nav}>
-      <button
+      {/* <button
         className={styles.navButton}
         onClick={() => router.push("/", { scroll: false })}
       >
         Home
-      </button>
+      </button> */}
       <button
         className={styles.navButton}
         onClick={() => router.push("/circle-chaser", { scroll: false })}

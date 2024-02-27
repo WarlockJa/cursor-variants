@@ -6,13 +6,13 @@
   display: flex;
   align-items: center;
 
-  .navButton:nth-child(1)::before {
+  /* .navButton:nth-child(1)::before {
     content: "Home";
-  }
-  .navButton:nth-child(2)::before {
+  } */
+  .navButton:nth-child(1)::before {
     content: "Circle Chaser";
   }
-  .navButton:nth-child(3)::before {
+  .navButton:nth-child(2)::before {
     content: "Star Trail";
   }
 

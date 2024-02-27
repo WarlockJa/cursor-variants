@@ -3,6 +3,8 @@
   justify-content: center;
   gap: 1em;
   height: var(--nav-height);
+  display: flex;
+  align-items: center;
 
   .navButton:nth-child(1)::before {
     content: "Home";
@@ -39,11 +41,9 @@
     bottom: 0;
     filter: drop-shadow(0 0 0.8em rgb(187, 163, 85));
   }
-  .navButton:focus,
   .navButton:hover {
     opacity: 1;
   }
-  .navButton:focus::before,
   .navButton:hover::before {
     opacity: 1;
   }

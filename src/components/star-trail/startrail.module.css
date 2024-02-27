@@ -1,0 +1,80 @@
+.remnant {
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  clip-path: polygon(
+    50% 0,
+    66% 33%,
+    100% 50%,
+    66% 66%,
+    50% 100%,
+    33% 66%,
+    0 50%,
+    33% 33%
+  );
+}
+
+.fallingDown1 {
+  animation: fallingDown1 750ms linear 1 forwards;
+}
+.fallingDown2 {
+  animation: fallingDown2 750ms linear 1 forwards;
+}
+.fallingDown3 {
+  animation: fallingDown3 750ms linear 1 forwards;
+}
+
+@keyframes fallingDown1 {
+  0% {
+    transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg)
+      scale(0.25);
+    opacity: 0;
+  }
+
+  5% {
+    transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg)
+      rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg)
+      rotateZ(90deg) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes fallingDown2 {
+  0% {
+    transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg)
+      scale(0.25);
+    opacity: 0;
+  }
+}
+
+@keyframes fallingDown3 {
+  0% {
+    transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg)
+      scale(0.5);
+    opacity: 0;
+  }
+}

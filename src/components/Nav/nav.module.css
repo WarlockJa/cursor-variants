@@ -4,7 +4,18 @@
   gap: 1em;
   height: var(--nav-height);
 
+  .navButton:nth-child(1)::before {
+    content: "Home";
+  }
+  .navButton:nth-child(2)::before {
+    content: "Circle Chaser";
+  }
+  .navButton:nth-child(3)::before {
+    content: "Star Trail";
+  }
+
   .navButton {
+    position: relative;
     width: 9em;
     padding: 0.5em 1em;
     font-size: 1rem;
@@ -12,7 +23,26 @@
     transition: opacity 300ms ease;
     cursor: pointer;
   }
+  .navButton::before {
+    position: absolute;
+    background: linear-gradient(90deg, rgb(49, 46, 95), rgb(143, 34, 34));
+    opacity: 0;
+    transition: opacity 300ms linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    filter: drop-shadow(0 0 0.8em rgb(187, 163, 85));
+  }
+  .navButton:focus,
   .navButton:hover {
+    opacity: 1;
+  }
+  .navButton:focus::before,
+  .navButton:hover::before {
     opacity: 1;
   }
 }

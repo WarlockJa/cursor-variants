@@ -12,7 +12,7 @@ export default function useCircleCursorData({
   increment: number;
 }) {
   const [circleData, setCircleData] = useState({
-    circlePos: { x: mouseX, y: mouseY },
+    circlePos: { x: -200, y: 800 },
     speedVector: { x: 0, y: 0 },
     transformationString: "",
   });

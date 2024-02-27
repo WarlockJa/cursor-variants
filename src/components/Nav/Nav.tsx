@@ -8,13 +8,19 @@ export default function Nav() {
     <nav className={styles.nav}>
       <button
         className={styles.navButton}
-        onClick={() => router.push("/circle-chaser")}
+        onClick={() => router.push("/", { scroll: false })}
+      >
+        Home
+      </button>
+      <button
+        className={styles.navButton}
+        onClick={() => router.push("/circle-chaser", { scroll: false })}
       >
         Circle Chaser
       </button>
       <button
         className={styles.navButton}
-        onClick={() => router.push("/star-trail")}
+        onClick={() => router.push("/star-trail", { scroll: false })}
       >
         Star Trail
       </button>

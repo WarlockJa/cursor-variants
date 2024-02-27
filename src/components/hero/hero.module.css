@@ -1,0 +1,53 @@
+.main {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  pointer-events: none;
+
+  .cover {
+    position: absolute;
+    border-radius: 2em;
+    top: 35%;
+    left: 50%;
+    bottom: 70%;
+    right: 50%;
+    animation: fadeInCover 4s cubic-bezier(0.375, 0.885, 0.32, 1.275) 1;
+    animation-fill-mode: forwards;
+    background: linear-gradient(45deg, rgb(48, 48, 73), rgb(78, 37, 37));
+  }
+
+  .header {
+    text-align: center;
+    opacity: 0;
+    animation: fadeInHeader 4s linear 1;
+    animation-fill-mode: forwards;
+    mix-blend-mode: overlay;
+    font-size: clamp(5rem, 20vmin, 15rem);
+  }
+}
+
+@keyframes fadeInHeader {
+  95% {
+    text-shadow: 3px 3px rgba(145, 41, 41, 0);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 6px 6px rgba(145, 41, 41, 1);
+  }
+}
+
+@keyframes fadeInCover {
+  50% {
+    left: 5%;
+    bottom: 20%;
+    right: 5%;
+  }
+  100% {
+    left: 5%;
+    bottom: 28%;
+    right: 5%;
+  }
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function useMouseMove() {
-  const [cursorPos, setCursorPos] = useState({ mouseX: 0, mouseY: 0 });
+  const [cursorPos, setCursorPos] = useState({ mouseX: -200, mouseY: 800 });
 
   useEffect(() => {
     const updateCursorPosition = (e: MouseEvent) => {

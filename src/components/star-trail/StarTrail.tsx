@@ -4,6 +4,7 @@ import styles from "./startrail.module.css";
 import { useEffect, useRef, useState } from "react";
 import getRandomArrayElement from "@/utils/getRandomArrayElement";
 import getDistance from "@/utils/getDistance";
+import Snowflake from "@/assets/svg/Snowflake";
 
 interface IRemanant {
   id: string;
@@ -138,15 +139,18 @@ export default function StarTrail() {
 
   // remnant elements
   const content = remnants.map((item) => (
-    <div
+    <svg
       key={`star${item.id}`}
       className={`${styles.remnant} ${styles[item.animationClass]}`}
+      viewBox="0 0 296 296"
       style={{
         left: `${item.x}px`,
         top: `${item.y}px`,
-        backgroundColor: item.backgroundColor,
+        fill: item.backgroundColor,
       }}
-    ></div>
+    >
+      <Snowflake />
+    </svg>
   ));
   // glow elements
   const glowContent = glow.map((item) => (

@@ -1,8 +1,11 @@
 .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   gap: 1em;
-  height: var(--nav-height);
   display: flex;
   align-items: center;
 

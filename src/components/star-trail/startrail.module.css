@@ -1,17 +1,7 @@
 .remnant {
   position: absolute;
-  width: 1.3em;
-  height: 1.3em;
-  clip-path: polygon(
-    50% 0,
-    66% 33%,
-    100% 50%,
-    66% 66%,
-    50% 100%,
-    33% 66%,
-    0 50%,
-    33% 33%
-  );
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .glow {

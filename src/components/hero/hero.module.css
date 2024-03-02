@@ -1,5 +1,6 @@
 .main {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,9 +11,9 @@
   .cover {
     position: absolute;
     border-radius: 2em;
-    top: 40%;
+    top: 35%;
     left: 50%;
-    bottom: 70%;
+    bottom: 50%;
     right: 50%;
     animation: fadeInCover 4s cubic-bezier(0.375, 0.885, 0.32, 1.275) 1;
     animation-fill-mode: forwards;
@@ -52,7 +53,7 @@
   }
   100% {
     left: 5%;
-    bottom: 28%;
+    bottom: 32%;
     right: 5%;
   }
 }

@@ -1,0 +1,10 @@
+.aurora {
+  position: absolute;
+  top: 20%;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  place-content: center;
+  z-index: -1;
+}

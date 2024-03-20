@@ -3,6 +3,7 @@ import { Inter, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav/Nav";
 import PageTransitionEffect from "@/contexts/PageTransitionEffect";
+import AuroraEffect from "@/components/AuroraEffect/AuroraEffect";
 
 const inter = Inter({ subsets: ["latin"] });
 const dancingScript = Dancing_Script({ subsets: ["latin"] });
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={dancingScript.className}>
         <Nav />
+        <AuroraEffect />
         <PageTransitionEffect>{children}</PageTransitionEffect>
       </body>
     </html>

@@ -38,7 +38,7 @@ export default function PageTransitionEffect({
         animate={isException ? "" : "enter"}
         exit="exit"
         variants={variants}
-        transition={{ type: "linear" }}
+        transition={{ type: "spring" }}
         className={styles.overflowHidden}
       >
         <FrozenRouter>{children}</FrozenRouter>

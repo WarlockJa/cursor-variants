@@ -17,7 +17,11 @@ export default function CircleChaser() {
   return (
     <div
       className={styles.circle}
-      style={{ top: circleY, left: circleX, transform: transformationString }}
+      style={{
+        top: circleY,
+        left: circleX,
+        transform: transformationString,
+      }}
     ></div>
   );
 }
